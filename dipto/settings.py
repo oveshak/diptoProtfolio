@@ -86,12 +86,8 @@ WSGI_APPLICATION = 'dipto.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'BzAqAYJMLHCylNRNmsMVsrtwqbUUDlRB',
-        'HOST': 'monorail.proxy.rlwy.net',
-        'PORT': '25527',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
