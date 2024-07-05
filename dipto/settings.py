@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure--%pc-$_43ba@d@yhnvkm293!!q1gfsxbg!=8-!1v$x9t7*-b*#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = ['.vercel.app','now.sh','127.0.0.1','localhost']
 
 
 # Application definition
@@ -86,8 +86,12 @@ WSGI_APPLICATION = 'dipto.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'BzAqAYJMLHCylNRNmsMVsrtwqbUUDlRB',
+        'HOST': 'monorail.proxy.rlwy.net',
+        'PORT': '25527',
     }
 }
 
