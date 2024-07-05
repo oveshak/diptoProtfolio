@@ -1,0 +1,11 @@
+{% load static %}
+<div class="domain">
+    <header>
+        <h1>Hi! I'm {{hero.names}}.</h1>
+
+        <div class="caption">
+            {{hero.text | safe}}
+            <a href="{% url 'contact' %}"><button class="minimal">Get in touch →</button></a>
+        </div>
+    </header>
+</div>

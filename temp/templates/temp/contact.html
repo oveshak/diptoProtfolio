@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+{% load static %}
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BG7MB85VSL"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-BG7MB85VSL');
+    </script>
+
+    {% block title %}
+    <title>Siyam Afroz</title>
+    {% endblock title %}
+    {% block css_file %}
+    {% include "temp/css.html" %}
+    {% endblock css_file %}
+    <!-- <link rel="icon" type="image/x-icon" href="images/logo.png" />  -->
+    
+    {% block content %}
+    <main class = "contact-page">
+        {% include "temp/nav.html" %}
+        
+        <h1>Contacts</h1>
+        <p>Wanna get in touch some other way?</p>
+
+
+        <div class="contacts">
+            <div  style="display: grid;align-content: center;grid-template-columns: auto auto auto auto;
+  ">
+                {% for social in socal %}
+                <div class="contact-section">
+                    <div>
+                        <a href="{{ social.socal_media_url }}"><p>{{ social.socal_media_name }}</p></a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        {% comment %} <div class="contacts">
+            <div class="socials">
+
+                <div class="contact-section">
+                    <div>
+                        <a href="https://twitter.com/soren_blank"><p>Twitter</p></a>
+                    </div>
+    
+                    <div>
+                        <a href="https://www.instagram.com/soren_blank/"><p>Instagram</p></a>
+                    </div>
+                    
+                    <div>
+                        <a href="https://www.facebook.com/soren.blank.0"><p>Facebook</p></a>
+                    </div>
+                </div>
+
+                <div class="contact-section">
+
+                    <div>
+                        <a href="https://www.linkedin.com/in/siyam-afroz/"><p>LinkedIn</p></a>
+                    </div>
+
+                    <div>
+                        <a href="https://github.com/sorenblank"><p>Github</p></a>
+                    </div>
+                    
+                    <div>
+                        <a href="https://discord.com/users/965453466510196807"><p>Discord</p></a>
+                    </div>
+                </div>
+
+                <div class="contact-section">
+                    <div>
+                        <a href="https://siyamafroz.substack.com/"><p>Substack</p></a>
+                    </div>
+
+                    <div>
+                        <a href="https://medium.com/@sorenblank"><p>Medium</p></a>
+                    </div>
+
+                    <div>
+                        <a href="https://www.goodreads.com/soren_blank"><p>Goodreads</p></a>
+                    </div>
+                </div>
+
+                <div class="contact-section">
+
+                    <div>
+                        <a href="https://myanimelist.net/profile/Soren_Blank"><p>MyAnimeList</p></a>
+                    </div>
+
+                    <div>
+                        <a href="https://www.youtube.com/@siyamafroz"><p>YouTube</p></a>
+                    </div>
+
+                    <div>
+                        <a href="https://vero.co/soren_blank/"><p>Vero</p></a>
+                    </div>
+
+                </div>
+            </div>
+        </div> {% endcomment %}
+
+
+    </main>
+
+    {% include "temp/footerContact.html" %}
+
+   {% include "temp/footer.html" %}
+    {% endblock content %}
+
+    {% block js_file %}
+    
+    {% include "temp/js.html" %}
+    {% endblock js_file %}

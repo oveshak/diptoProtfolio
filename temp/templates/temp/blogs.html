@@ -1,0 +1,156 @@
+{% extends 'base.html' %}
+{% load static %}
+    <!-- Google tag (gtag.js) -->
+    {% comment %} <script async src="https://www.googletagmanager.com/gtag/js?id=G-BG7MB85VSL"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-BG7MB85VSL');
+    </script> {% endcomment %}
+
+    {% block title %}
+    <title>A R S D</title>
+    {% endblock title %}
+    {% block css_file %}
+    {% include "temp/css.html" %}
+    {% endblock css_file %}
+    <!-- <link rel="icon" type="image/x-icon" href="images/logo.png" />  -->
+    
+    {% block content %}
+    <main class = "projects-page">
+        {% comment %} <navbar>
+                <a href='index.html'><p class="homenav">~</p></a>
+                <p>/</p>
+                <a href='projects.html'><p class="projnav">Projects</p></a>
+                <p>/</p>
+                <a href='blogs.html' style='text-decoration: underline;'><p class="blognav">Blogs</p></a>
+                <p>/</p>
+                <a href='contact.html'><p class="contactnav">Contact</p></a>
+                <p>|</p>
+                <a id="myDIV" class="btn" onclick="myFunction()" href="#"><p id="textmode">Dark</p></a>
+        </navbar> {% endcomment %}
+
+        {% include "temp/nav.html" %}
+        <section>
+            <div class="blogs" style="padding-top: 26px;">
+                <div class="projects-title">
+                    <h2>{{blog.name}}</h2>
+                    <a href="{{global.blog_write_side_link}}"><p>See more</p></a>
+                </div>
+                <div class="all-blogs">
+                    {% for i in blog.blog_item.all|slice:":5" %}
+                    <a target="_blank" href="{{i.blog_link}}">
+                        <div class="blog">
+                            <div class="content">
+                                <h3>{{i.title}}</p></h3>
+                                <p>{{i.subtitle}}</p>
+                            </div>
+                            <div>
+                                <p class="read">Read  →</p>
+                            </div>
+                        </div>
+                    </a>
+                    {% endfor %}
+
+
+                    {% comment %} <a target="_blank" href="https://soren-blank.medium.com/why-sharing-ideas-is-important-fb609f65a0d5">
+                        <div class="blog">
+                            <div class="content">
+                                <h3>Why sharing ideas is important</p></h3>
+                                <p>Is it really important?</p>
+                            </div>
+                            <div>
+                                <p class="read">Read  →</p>
+                            </div>
+                        </div>
+                    </a>
+
+
+
+                    <a target="_blank" href="https://siyamafroz.substack.com/p/issue-10-nofap-can-make-you-a-better">
+                        <div class="blog">
+                            <div class="content">
+                                <h3>NoFap can make you a better engineer</p></h3>
+                                <p>My view on how instant gratification is bad</p>
+                            </div>
+                            <div>
+                                <p class="read">Read  →</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://siyamafroz.substack.com/p/issue-4-dont-pick-a-niche">
+                        <div class="blog">
+                            <div class="content">
+                                <h3>Don't pick a niche</p></h3>
+                                <p>Do you really need a niche?</p>
+                            </div>
+                            <div>
+                                <p class="read">Read  →</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a target="_blank" href="https://sorenblank.medium.com/programming-guide-2024-7b04ff680141">
+                        <div class="blog">
+                            <div class="content">
+                                <h3>Programming Guide 2024</p></h3>
+                                <p>Learn Programming the real(hard) way</p>
+                            </div>
+                            <div>
+                                <p class="read">Read  →</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a target="_blank" href="https://medium.com/@soren-blank/programming-for-babies-570441c45d41">
+                        <div class="blog">
+                            <div class="content">
+                                <h3>Programming for babies</p></h3>
+                                <p>A baby-beginner’s guide to programming</p>
+                            </div>
+                            <div>
+                                <p class="read">Read  →</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a target="_blank" href="https://medium.com/@soren-blank/how-to-fall-in-love-with-books-e2a3fb736a03">
+                        <div class="blog">
+                            <div class="content">
+                                <h3>How to fall in love with books</p></h3>
+                                <p>My adventure into the world of books</p>
+                            </div>
+                            <div>
+                                <p class="read">Read  →</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a target="_blank" href="https://medium.com/@soren-blank/the-age-of-chatgpt-71c224943374">
+                        <div class="blog">
+                            <div class="content">
+                                <h3>The Age of ChatGPT</p></h3>
+                                <p>Explaining the hype of ChatGPT</p>
+                            </div>
+                            <div>
+                                <p class="read">Read  →</p>
+                            </div>
+                        </div>
+                    </a> {% endcomment %}
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+    {% include "temp/footer.html" %}
+
+    {% endblock content %}
+
+    {% block js_file %}
+    
+    {% include "temp/js.html" %}
+    {% endblock js_file %}

@@ -1,0 +1,13 @@
+{% load static %}
+
+<nav>
+    <a href="{% url 'index' %}"><p class="homenav">~</p></a>
+    <p>/</p>
+    <a href="{% url 'project' %}"><p class="projnav">Projects</p></a>
+    <p>/</p>
+    <a href="{% url 'blog' %}"><p class="blognav">Blogs</p></a>
+    <p>/</p>
+    <a href="{% url 'contact' %}"><p class="contactnav">Contact</p></a>
+    <p>|</p>
+    <a id="myDIV" class="btn" href="#" onclick="myFunction()"><p id="textmode">Dark</p></a>
+</nav>
